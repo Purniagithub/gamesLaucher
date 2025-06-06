@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/gamesLaucher/static/css/main.c343a7d3.css",
+    "main.js": "/gamesLaucher/static/js/main.173acc39.js",
+    "static/js/453.114fd8a8.chunk.js": "/gamesLaucher/static/js/453.114fd8a8.chunk.js",
+    "index.html": "/gamesLaucher/index.html",
+    "main.c343a7d3.css.map": "/gamesLaucher/static/css/main.c343a7d3.css.map",
+    "main.173acc39.js.map": "/gamesLaucher/static/js/main.173acc39.js.map",
+    "453.114fd8a8.chunk.js.map": "/gamesLaucher/static/js/453.114fd8a8.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c343a7d3.css",
+    "static/js/main.173acc39.js"
+  ]
+}
