@@ -1,0 +1,200 @@
+/* Base Layout */
+.chess-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    min-height: 100vh;
+    justify-content: center;
+  }
+  
+  .chess-container.light {
+    background: #f0f0f0;
+    color: #222;
+  }
+  
+  .chess-container.dark {
+    background: #1e1e1e;
+    color: #f5f5f5;
+  }
+  
+  /* Timer and Info */
+  .info-panel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px auto;
+    max-width: 400px;
+  }
+  
+  .timer {
+    font-size: 1.2rem;
+    padding: 8px 16px;
+    border-radius: 6px;
+    background: #ccc;
+    font-weight: bold;
+    transition: background 0.3s;
+  }
+  
+  .timer.active {
+    background: #ffcc00;
+  }
+  
+  /* Board */
+  .chess-board {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #444;
+  }
+  
+  .chess-row {
+    display: flex;
+  }
+  
+  .chess-cell {
+    width: 70px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 72px;
+    font-weight: bold;
+  }
+  
+  .chess-cell.light {
+    background-color: #f0d9b5;
+  }
+  
+  .chess-cell.dark {
+    background-color: #b58863;
+  }
+  
+  .chess-container.dark .chess-cell.light {
+    background-color: #d1a774;
+  }
+  
+  .chess-container.dark .chess-cell.dark {
+    background-color: #5c422a;
+  }
+  
+  /* Piece Animation */
+  .piece {
+    font-size: 60px; /* Increase from 32px or 36px */
+    transform: rotate(-90deg); /* Keeps piece upright if board is rotated */
+    display: inline-block;
+  }
+  
+  /* Highlight legal move dots */
+  .highlight .dot {
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    z-index: 1;
+  }
+  
+  /* Captured section */
+  .captured-section {
+    margin-top: 10px;
+    font-size: 1.3rem;
+  }
+  
+  .captured-row {
+    margin: 5px 0;
+  }
+  
+  /* Reset Button */
+  .reset-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #444;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .reset-button:hover {
+    background-color: #222;
+  }
+  
+  /* Modal */
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(30, 30, 30, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .modal {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+    max-width: 300px;
+  }
+  
+  .chess-container.dark .modal {
+    background: #333;
+    color: white;
+  }
+  
+  /* Invalid Move Popup */
+  .invalid-popup {
+    margin-top: 10px;
+    color: red;
+    font-weight: bold;
+    animation: fadeInOut 2s ease-out;
+  }
+  
+  @keyframes fadeInOut {
+    0% { opacity: 0; }
+    20% { opacity: 1; }
+    80% { opacity: 1; }
+    100% { opacity: 0; }
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 600px) {
+    .chess-cell {
+      width: 40px;
+      height: 40px;
+      font-size: 1.5rem;
+    }
+  
+    .info-panel {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .reset-button {
+      margin-top: 15px;
+      font-size: 0.9rem;
+    }
+  
+    .captured-section {
+      font-size: 1rem;
+    }
+  }
+
+  
+  .board-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: rotate(90deg); /* Rotate the board */
+    transform-origin: center;
+  }
+
+  .chess-cell .piece {
+    display: inline-block;
+    transform: rotate(-90deg); /* Counter the board's 90deg */
+  }

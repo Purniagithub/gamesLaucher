@@ -1,0 +1,130 @@
+/* Home Page Styles - prefixed with home- */
+.home-app {
+  text-align: center;
+  padding: 2rem;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #1f4037, #99f2c8);
+  min-height: 100vh;
+}
+
+.home-title {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #ffffff;
+  text-shadow: 2px 2px 5px #000;
+}
+
+.home-card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.home-game-card {
+  background: #ffffff11;
+  border: 2px solid #ffffff33;
+  border-radius: 12px;
+  width: 180px;
+  height: 200px;
+  color: white;
+  perspective: 1000px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  position: relative;
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+.home-game-card:hover {
+  transform: scale(1.05);
+}
+
+.home-ripple-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+}
+
+.home-game-card:hover .home-ripple-container {
+  transform: rotateY(180deg);
+}
+
+.home-card-front,
+.home-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-card-front {
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.home-card-back {
+  background: rgba(0, 0, 0, 0.7);
+  transform: rotateY(180deg);
+  padding: 1rem;
+}
+
+.home-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.home-tooltip {
+  position: relative;
+}
+
+.home-tooltiptext {
+  visibility: hidden;
+  width: 180px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.8rem;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.home-tooltip:hover .home-tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Animation */
+@keyframes fadeInUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.home-card-row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+  margin-bottom: 1rem;
+  gap: 1rem;
+}
+
+
